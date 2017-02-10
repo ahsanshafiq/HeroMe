@@ -31,6 +31,7 @@ public class BackStoryFragment extends Fragment {
     private HeroPower mHeroPower;
 
     private RequestToLoadStartupFragmentListener mListener;
+    private Context mParentActivity;
 
     @BindView(R.id.tvSubHeading)
     TextView tvSubHeading;
@@ -114,35 +115,35 @@ public class BackStoryFragment extends Fragment {
         String buttonText;
         if (mHeroPowerOrigin.equals(HeroPowerOrigin.CameByAccident)) {
             leftDrawable = drCameByAccident;
-            buttonText = HeroPowerOrigin.CameByAccident.toString();
+            buttonText = HeroPowerOrigin.CameByAccident.getDisplayName(mParentActivity);
         } else if (mHeroPowerOrigin.equals(HeroPowerOrigin.BornWithThem)) {
             leftDrawable = drBornWithThem;
-            buttonText = HeroPowerOrigin.BornWithThem.toString();
+            buttonText = HeroPowerOrigin.BornWithThem.getDisplayName(mParentActivity);
         } else {
             leftDrawable = drGeneticMutation;
-            buttonText = HeroPowerOrigin.GeneticMutation.toString();
+            buttonText = HeroPowerOrigin.GeneticMutation.getDisplayName(mParentActivity);
         }
         btnPowerOrigin.setCompoundDrawablesWithIntrinsicBounds(leftDrawable, null, drUnSelected, null);
         btnPowerOrigin.setText(buttonText);
 
         if (mHeroPower.equals(HeroPower.TurtlePower)) {
             leftDrawable = drTurtlePower;
-            buttonText = HeroPower.TurtlePower.toString();
+            buttonText = HeroPower.TurtlePower.getDisplayName(mParentActivity);
         } else if (mHeroPower.equals(HeroPower.Lightning)) {
             leftDrawable = drLightning;
-            buttonText = HeroPower.Lightning.toString();
+            buttonText = HeroPower.Lightning.getDisplayName(mParentActivity);
         } else if (mHeroPower.equals(HeroPower.Flight)) {
             leftDrawable = drFlight;
-            buttonText = HeroPower.Flight.toString();
+            buttonText = HeroPower.Flight.getDisplayName(mParentActivity);
         } else if (mHeroPower.equals(HeroPower.WebSlinging)) {
             leftDrawable = drWebSlinging;
-            buttonText = HeroPower.WebSlinging.toString();
+            buttonText = HeroPower.WebSlinging.getDisplayName(mParentActivity);
         } else if (mHeroPower.equals(HeroPower.LaserVision)) {
             leftDrawable = drLaserVision;
-            buttonText = HeroPower.LaserVision.toString();
+            buttonText = HeroPower.LaserVision.getDisplayName(mParentActivity);
         } else {
             leftDrawable = drSuperStrength;
-            buttonText = HeroPower.SuperStrength.toString();
+            buttonText = HeroPower.SuperStrength.getDisplayName(mParentActivity);
         }
         btnPower.setCompoundDrawablesWithIntrinsicBounds(leftDrawable, null, drUnSelected, null);
         btnPower.setText(buttonText);
@@ -158,6 +159,7 @@ public class BackStoryFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        mParentActivity = getActivity();
         if (context instanceof RequestToLoadStartupFragmentListener) {
             mListener = (RequestToLoadStartupFragmentListener) context;
         } else {
@@ -170,6 +172,7 @@ public class BackStoryFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+        mParentActivity = null;
     }
 
     public interface RequestToLoadStartupFragmentListener {

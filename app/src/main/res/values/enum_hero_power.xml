@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="None">None</string>
+    <string name="TurtlePower">Turtle Power</string>
+    <string name="Lightning">Lightning</string>
+    <string name="Flight">Flight</string>
+    <string name="WebSlinging">Web Slinging</string>
+    <string name="LaserVision">Laser Vision</string>
+    <string name="SuperStrength">Super Strength</string>
+</resources>

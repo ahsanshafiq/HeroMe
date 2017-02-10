@@ -29,6 +29,8 @@ public class PickPowerFragment extends Fragment {
     private HeroPowerOrigin mHeroPowerOrigin;
     private HeroPower mHeroPower;
 
+    private Context mParentActivity;
+
     @BindView(R.id.btnTurtlePower)
     Button btnTurtlePower;
     @BindView(R.id.btnLightning)
@@ -117,12 +119,12 @@ public class PickPowerFragment extends Fragment {
         btnShowBackStory.setEnabled(false);
         btnShowBackStory.getBackground().setAlpha(128);
 
-        btnTurtlePower.setText(HeroPower.TurtlePower.toString());
-        btnLightning.setText(HeroPower.Lightning.toString());
-        btnFlight.setText(HeroPower.Flight.toString());
-        btnWebSlinging.setText(HeroPower.WebSlinging.toString());
-        btnLaserVision.setText(HeroPower.LaserVision.toString());
-        btnSuperStrength.setText(HeroPower.SuperStrength.toString());
+        btnTurtlePower.setText(HeroPower.TurtlePower.getDisplayName(mParentActivity));
+        btnLightning.setText(HeroPower.Lightning.getDisplayName(mParentActivity));
+        btnFlight.setText(HeroPower.Flight.getDisplayName(mParentActivity));
+        btnWebSlinging.setText(HeroPower.WebSlinging.getDisplayName(mParentActivity));
+        btnLaserVision.setText(HeroPower.LaserVision.getDisplayName(mParentActivity));
+        btnSuperStrength.setText(HeroPower.SuperStrength.getDisplayName(mParentActivity));
 
         setupPowerButtons();
     }
@@ -130,6 +132,7 @@ public class PickPowerFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        mParentActivity = context;
         if (context instanceof RequestToLoadBackStoryFragmentListener) {
             mListener = (RequestToLoadBackStoryFragmentListener) context;
         } else {
@@ -167,6 +170,7 @@ public class PickPowerFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+        mParentActivity = null;
     }
 
     public interface RequestToLoadBackStoryFragmentListener {

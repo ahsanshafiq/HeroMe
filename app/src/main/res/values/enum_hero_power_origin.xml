@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="GeneticMutation">Genetic Mutation</string>
+    <string name="CameByAccident">Came By Accident</string>
+    <string name="BornWithThem">Born With Them</string>
+</resources>

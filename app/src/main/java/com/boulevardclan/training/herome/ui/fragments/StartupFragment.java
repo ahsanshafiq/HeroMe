@@ -31,6 +31,7 @@ public class StartupFragment extends Fragment {
     }
 
     private HeroPowerOrigin mHeroPowerOrigin;
+    private Context mParentActivity;
 
     @BindView(R.id.btnGeneticMutation)
     Button btnGeneticMutation;
@@ -99,9 +100,9 @@ public class StartupFragment extends Fragment {
         btnChooseOne.setEnabled(false);
         btnChooseOne.getBackground().setAlpha(128);
 
-        btnCameByAccident.setText(HeroPowerOrigin.CameByAccident.toString());
-        btnGeneticMutation.setText(HeroPowerOrigin.GeneticMutation.toString());
-        btnBornWithThem.setText(HeroPowerOrigin.BornWithThem.toString());
+        btnCameByAccident.setText(HeroPowerOrigin.CameByAccident.getDisplayName(mParentActivity));
+        btnGeneticMutation.setText(HeroPowerOrigin.GeneticMutation.getDisplayName(mParentActivity));
+        btnBornWithThem.setText(HeroPowerOrigin.BornWithThem.getDisplayName(mParentActivity));
 
         setupPowerOriginButtons();
     }
@@ -109,6 +110,7 @@ public class StartupFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        mParentActivity = getActivity();
         if (context instanceof RequestToLoadPickAPowerFragmentListener) {
             mListener = (RequestToLoadPickAPowerFragmentListener) context;
         } else {
@@ -121,6 +123,7 @@ public class StartupFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+        mParentActivity = null;
     }
 
     public interface RequestToLoadPickAPowerFragmentListener {
