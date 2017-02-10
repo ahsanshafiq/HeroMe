@@ -18,8 +18,12 @@ import com.boulevardclan.training.herome.ui.fragments.StartupFragment;
 //[DONE]TODO: Add fragment change transitions
 //[DONE]TODO: Save and restore instance state upon pressing back button
 //[DONE]TODO: Start over erases state while pressing back on individual fragment saves state
-//TODO: Change package and app name
+//[DONE] TODO: Externalize enum display values
+//[DONE]TODO: Change package and app name
 //TODO: Do we really need setBackgroundTint() calls since we have removed tint Attribute from the styles?
+
+//In progress
+//TODO: Playing around with SpannableText, ImageSpan etc.
 
 public class StartupActivity extends AppCompatActivity implements StartupFragment.RequestToLoadPickAPowerFragmentListener,
         PickPowerFragment.RequestToLoadBackStoryFragmentListener, BackStoryFragment.RequestToLoadStartupFragmentListener {

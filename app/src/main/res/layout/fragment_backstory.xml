@@ -27,33 +27,33 @@
         android:layout_margin="12dp"
         android:paddingTop="5dp">
 
-        <ImageView
-            android:id="@+id/ivBigSuperManLogo"
+        <!--<ImageView
+            android:id="@+id/ivBigLogo"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/big_superman_logo" />
+            android:layout_height="wrap_content" />-->
 
         <TextView
             android:id="@+id/tvBackStorySubHeading"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:paddingBottom="10dp"
-            android:text="BackStory"
+            android:layout_marginBottom="5dp"
+            android:text="@string/backstory"
+            android:textAlignment="center"
             android:textSize="18sp"
             android:textStyle="normal|bold" />
 
         <TextView
+            android:id="@+id/tvPowerBackStory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/ivBigSuperManLogo"
-            android:layout_marginTop="8dp"
+            android:layout_below="@+id/tvBackStorySubHeading"
             android:lines="10"
             android:maxLines="10"
-            android:text="BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory " />
+            android:text="@string/flight_back_story" />
     </RelativeLayout>
 
     <!--<View style="@style/divider" />-->

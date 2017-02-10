@@ -12,4 +12,6 @@
     <string name="super_man">SUPERMAN</string>
     <string name="power_origin">Power Origin</string>
     <string name="power">Power</string>
+    <string name="back_story_heading">%s Man</string>
+    <string name="backstory">BackStory</string>
 </resources>

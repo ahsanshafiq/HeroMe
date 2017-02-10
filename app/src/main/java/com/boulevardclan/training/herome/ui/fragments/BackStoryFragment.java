@@ -4,10 +4,14 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ImageSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.boulevardclan.training.herome.R;
@@ -35,6 +39,11 @@ public class BackStoryFragment extends Fragment {
 
     @BindView(R.id.tvSubHeading)
     TextView tvSubHeading;
+    @BindView(R.id.tvPowerBackStory)
+    TextView tvPowerBackStory;
+
+    /*@BindView(R.id.ivBigLogo)
+    ImageView ivBigLogo;*/
 
     @BindView(R.id.tvPowerOrigin)
     TextView tvPowerOrigin;
@@ -74,7 +83,20 @@ public class BackStoryFragment extends Fragment {
 
     @BindString(R.string.start_over)
     String startOver;
-
+    @BindString(R.string.back_story_heading)
+    String backStoryHeading;
+    @BindString(R.string.turtle_power_back_story)
+    String turtlePowerBackStory;
+    @BindString(R.string.lightning_back_story)
+    String lightningBackStory;
+    @BindString(R.string.flight_back_story)
+    String flightBackStory;
+    @BindString(R.string.web_slinging_back_story)
+    String webSlingingBackStory;
+    @BindString(R.string.laser_vision_back_story)
+    String laserVisionBackStory;
+    @BindString(R.string.super_strength_back_story)
+    String superStrengthBackStory;
 
     public BackStoryFragment() {
         // Required empty public constructor
@@ -109,10 +131,9 @@ public class BackStoryFragment extends Fragment {
 
     private void initUI() {
 
-        btnStartOver.setText(startOver);
-
         Drawable leftDrawable;
         String buttonText;
+        String backStoryText;
         if (mHeroPowerOrigin.equals(HeroPowerOrigin.CameByAccident)) {
             leftDrawable = drCameByAccident;
             buttonText = HeroPowerOrigin.CameByAccident.getDisplayName(mParentActivity);
@@ -129,24 +150,41 @@ public class BackStoryFragment extends Fragment {
         if (mHeroPower.equals(HeroPower.TurtlePower)) {
             leftDrawable = drTurtlePower;
             buttonText = HeroPower.TurtlePower.getDisplayName(mParentActivity);
+            backStoryText = turtlePowerBackStory;
         } else if (mHeroPower.equals(HeroPower.Lightning)) {
             leftDrawable = drLightning;
             buttonText = HeroPower.Lightning.getDisplayName(mParentActivity);
+            backStoryText = lightningBackStory;
         } else if (mHeroPower.equals(HeroPower.Flight)) {
             leftDrawable = drFlight;
             buttonText = HeroPower.Flight.getDisplayName(mParentActivity);
+            backStoryText = flightBackStory;
         } else if (mHeroPower.equals(HeroPower.WebSlinging)) {
             leftDrawable = drWebSlinging;
             buttonText = HeroPower.WebSlinging.getDisplayName(mParentActivity);
+            backStoryText = webSlingingBackStory;
         } else if (mHeroPower.equals(HeroPower.LaserVision)) {
             leftDrawable = drLaserVision;
             buttonText = HeroPower.LaserVision.getDisplayName(mParentActivity);
+            backStoryText = laserVisionBackStory;
         } else {
             leftDrawable = drSuperStrength;
             buttonText = HeroPower.SuperStrength.getDisplayName(mParentActivity);
+            backStoryText = superStrengthBackStory;
         }
+        setSpannableText(leftDrawable, backStoryText);
         btnPower.setCompoundDrawablesWithIntrinsicBounds(leftDrawable, null, drUnSelected, null);
         btnPower.setText(buttonText);
+        tvSubHeading.setText(String.format(backStoryHeading,buttonText));
+        btnStartOver.setText(startOver);
+    }
+
+    private void setSpannableText(Drawable drawable, String backStoryText) {
+        SpannableString spannableString = new SpannableString(backStoryText);
+        drawable.setBounds(0, 0, 120, 120);
+        ImageSpan imageSpan = new ImageSpan(drawable, ImageSpan.ALIGN_BOTTOM);
+        spannableString.setSpan(imageSpan, backStoryText.length(), backStoryText.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        tvPowerBackStory.setText(spannableString);
     }
 
     @OnClick(R.id.btnStartOver)
