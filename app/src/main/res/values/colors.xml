@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#ff4081</color>
+    <color name="colorToolbar">#253748</color>
+
+    <color name="colorBGStart">#10161D</color>
+    <color name="colorBGCenter">#233B4F</color>
+    <color name="colorBGEnd">#10161D</color>
+
+    <color name="colorButtonText">#fac740</color>
+    <color name="colorDisabledButtonText">#c18d04</color>
+    <color name="white">#FFF</color>
+
+</resources>

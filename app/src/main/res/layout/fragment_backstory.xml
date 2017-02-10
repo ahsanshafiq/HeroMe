@@ -1,0 +1,103 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/hero_bg_gradient"
+    android:orientation="vertical">
+
+    <!--<View
+        style="@style/divider"
+        android:layout_marginTop="10dp" />-->
+
+    <TextView
+        android:id="@+id/tvSubHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="5dp"
+        android:text="@string/super_man"
+        android:textColor="@color/colorButtonText"
+        android:textSize="24sp"
+        android:textStyle="normal|bold" />
+
+    <!--<View style="@style/divider" />-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:paddingTop="5dp">
+
+        <ImageView
+            android:id="@+id/ivBigSuperManLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/big_superman_logo" />
+
+        <TextView
+            android:id="@+id/tvBackStorySubHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:paddingBottom="10dp"
+            android:text="BackStory"
+            android:textSize="18sp"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/ivBigSuperManLogo"
+            android:layout_marginTop="8dp"
+            android:lines="10"
+            android:maxLines="10"
+            android:text="BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory BackStory " />
+    </RelativeLayout>
+
+    <!--<View style="@style/divider" />-->
+
+    <TextView
+        android:id="@+id/tvPowerOrigin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:paddingTop="5dp"
+        android:text="@string/power_origin"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        android:textStyle="normal|bold" />
+
+    <Button
+        android:id="@+id/btnPowerOrigin"
+        style="@style/hero_button"
+        android:clickable="false" />
+
+    <TextView
+        android:id="@+id/tvPower"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:paddingTop="5dp"
+        android:text="@string/power"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        android:textStyle="normal|bold" />
+
+    <Button
+        android:id="@+id/btnPower"
+        style="@style/hero_button"
+        android:clickable="false" />
+
+    <!--<View style="@style/divider" />-->
+
+    <Button
+        android:id="@+id/btnStartOver"
+        style="@style/action_button" />
+</LinearLayout>
+

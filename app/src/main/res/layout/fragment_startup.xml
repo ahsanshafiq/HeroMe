@@ -1,0 +1,52 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/hero_bg_gradient"
+    android:orientation="vertical">
+
+    <!--<View
+        style="@style/divider"
+        android:layout_marginTop="10dp" />-->
+
+    <TextView
+        android:id="@+id/tvSubHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="15dp"
+        android:text="@string/how_did_you_get_your_powers"
+        android:textColor="@color/colorButtonText"
+        android:textSize="24sp"
+        android:textStyle="normal|bold" />
+
+    <ImageView
+        android:id="@+id/ivAllPowers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/heroes" />
+
+    <!--<View style="@style/divider" />-->
+
+    <Button
+        android:id="@+id/btnCameByAccident"
+        style="@style/hero_button" />
+
+    <Button
+        android:id="@+id/btnGeneticMutation"
+        style="@style/hero_button" />
+
+    <Button
+        android:id="@+id/btnBornWithThem"
+        style="@style/hero_button" />
+
+    <!--<View style="@style/divider" />-->
+
+    <Button
+        android:id="@+id/btnChooseOne"
+        style="@style/action_button" />
+
+    <!--<View style="@style/divider" />-->
+</LinearLayout>
